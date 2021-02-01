@@ -1,8 +1,8 @@
 version: '2'
 services:
   web:
-    container_name: chiles_odoo
-    image: odoo:12.0
+    container_name: orbital_odoo
+    image: odoo:13.0
     depends_on:
       - db
     ports:
@@ -12,8 +12,8 @@ services:
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
   db:
-    container_name: chiles_db
-    image: postgres:10
+    container_name: orbital_db
+    image: postgres:11
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
